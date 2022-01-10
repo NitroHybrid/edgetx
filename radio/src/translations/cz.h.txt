@@ -146,7 +146,9 @@
 
 #define LEN_VMIXTRIMS                  "\004"
 
-#if defined(PCBHORUS)
+#if defined(PCBPL18)
+  #define TR_VMIXTRIMS                 "VYP\0""ZAP\0""Směr""Výšk""Plyn""Křid""TR1\0""TR2\0""TR3\0""TR4\0"
+#elif defined(PCBHORUS)
   #define TR_VMIXTRIMS                 "VYP\0""ZAP\0""Směr""Výšk""Plyn""Křid""T5\0""T6\0"
 #else
   #define TR_VMIXTRIMS                 "VYP\0""ZAP\0""Směr""Výšk""Plyn""Křid"

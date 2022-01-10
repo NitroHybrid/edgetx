@@ -150,7 +150,9 @@
 
 #define LEN_VMIXTRIMS          "\003"
 
-#if defined(PCBHORUS)
+#if defined(PCBPL18)
+  #define TR_VMIXTRIMS         "Av\0""På\0""Rod""Hjd""Gas""Ske""TR1""TR2""TR3""TR4"
+#elif defined(PCBHORUS)
   #define TR_VMIXTRIMS         "Av\0""På\0""Rod""Hjd""Gas""Ske""T5\0""T6\0"
 #else
   #define TR_VMIXTRIMS         "Av\0""På\0""Rod""Hjd""Gas""Ske"
