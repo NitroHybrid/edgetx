@@ -79,7 +79,7 @@
   #define TR_POTS_VSRCRAW              STR_CHAR_POT"VRA" STR_CHAR_POT"VRB" /* With 3 characters, NO terminating \0 ! */
   #define TR_SW_VSRCRAW                STR_CHAR_SWITCH"SA\0" STR_CHAR_SWITCH"SB\0" STR_CHAR_SWITCH"SC\0" STR_CHAR_SWITCH"SD\0" STR_CHAR_SWITCH"SE\0" STR_CHAR_SWITCH"SF\0" STR_CHAR_SWITCH"SG\0" STR_CHAR_SWITCH"SH\0"
 #elif defined(PCBPL18)
-  #define TR_POTS_VSRCRAW              STR_CHAR_POT"VRA" STR_CHAR_POT"VRB" STR_CHAR_POT"VRC" STR_CHAR_SLIDER"LS\0" STR_CHAR_SLIDER"RS\0" /* With 3 characters, NO terminating \0 ! */
+  #define TR_POTS_VSRCRAW              STR_CHAR_POT"VRA" STR_CHAR_POT"VRB" STR_CHAR_POT"VRC" STR_CHAR_SLIDER"VRD" STR_CHAR_SLIDER"VRE" /* With 3 characters, NO terminating \0 ! */
   #define TR_SW_VSRCRAW                STR_CHAR_SWITCH"SA\0" STR_CHAR_SWITCH"SB\0" STR_CHAR_SWITCH"SC\0" STR_CHAR_SWITCH"SD\0" STR_CHAR_SWITCH"SE\0" STR_CHAR_SWITCH"SF\0" STR_CHAR_SWITCH"SG\0" STR_CHAR_SWITCH"SH\0"
 #endif
 
@@ -104,7 +104,7 @@
 
 #if defined(PCBHORUS) || defined(PCBNV14) || defined(PCBPL18)
   #define LEN_VKEYS                    "\005"
-  #define TR_VKEYS                     "PGUP\0""PGDN\0""ENTER""MDL\0 ""RTN\0 ""TELE\0""SYS\0 "
+  #define TR_VKEYS                     "PGUP\0""PGDN\0""ENTER""MODEL""RTN\0 ""TELEM""RADIO"
 #elif defined(PCBXLITE)
   #define LEN_VKEYS                    "\005"
   #define TR_VKEYS                     "Shift""Exit\0""Enter""Down\0""Up\0  ""Right""Left\0"
@@ -222,8 +222,8 @@
 #define LEN_PWR_OFF_DELAYS             "\002"
 #define TR_PWR_OFF_DELAYS              "0s""1s""2s""4s"
 
-#if defined(PCBNV14) || defined(PCBPL18)
-#define  TR_RFPOWER_AFHDS2             "\007" "Default\0""High\0"
+#if defined(PCBNV14)
+#define TR_RFPOWER_AFHDS2              "\007" "Default\0""High\0"
 #endif
 
 #define TR_SENSOR_RSSI                      "RSSI"
