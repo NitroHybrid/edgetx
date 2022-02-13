@@ -66,8 +66,8 @@ static void flushLcd(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_
   refr_area.x1 = LCD_W - tmp_coord - 1;
 #endif
 
-  if (refr_area.x1 != 0 || refr_area.x2 != 479 || refr_area.y1 != 0 ||
-      refr_area.y2 != 271) {
+  if (refr_area.x1 != 0 || refr_area.x2 != LCD_PHYS_W-1 || refr_area.y1 != 0 ||
+      refr_area.y2 != LCD_PHYS_H-1) {
     TRACE("partial refresh @ 0x%p {%d,%d,%d,%d}", color_p, refr_area.x1,
           refr_area.y1, refr_area.x2, refr_area.y2);
   } else {
@@ -214,10 +214,11 @@ static lv_disp_drv_t* init_disp_drv()
   disp_drv.direct_mode = 0;
 #if defined (LCD_VERTICAL_INVERT)
   disp_drv.rotated = LV_DISP_ROT_180;
+  disp_drv.sw_rotate = 1;
 #elif defined(PCBPL18)
   disp_drv.rotated = LV_DISP_ROT_90;
-#endif
   disp_drv.sw_rotate = 1;
+#endif
 
   return &disp_drv;
 }
