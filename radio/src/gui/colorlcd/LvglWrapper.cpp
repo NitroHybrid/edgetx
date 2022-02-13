@@ -214,8 +214,9 @@ static lv_disp_drv_t* init_disp_drv()
   disp_drv.direct_mode = 0;
 #if defined (LCD_VERTICAL_INVERT)
   disp_drv.rotated = LV_DISP_ROT_180;
+#elif defined(PCBPL18)
+  disp_drv.rotated = LV_DISP_ROT_90;
 #endif
-//  disp_drv.rotated = LV_DISP_ROT_90;
   disp_drv.sw_rotate = 1;
 
   return &disp_drv;
